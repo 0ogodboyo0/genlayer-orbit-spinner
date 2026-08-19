@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">GenLayer Orbit loading spinner</title>
+  <desc id="desc">An animated layered orbital spinner with a geometric core.</desc>
+  <defs>
+    <linearGradient id="gl-gradient" x1="24" y1="24" x2="136" y2="136" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8B5CF6"/>
+      <stop offset="0.52" stop-color="#5E39E6"/>
+      <stop offset="1" stop-color="#FF8A3D"/>
+    </linearGradient>
+    <linearGradient id="gl-core" x1="62" y1="48" x2="102" y2="112" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#A78BFA"/>
+      <stop offset="0.55" stop-color="#6D45E9"/>
+      <stop offset="1" stop-color="#FF9A4D"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <style>
+      .orbit-a { transform-origin: 80px 80px; animation: gl-spin 1.45s linear infinite; }
+      .orbit-b { transform-origin: 80px 80px; animation: gl-spin-reverse 2.25s linear infinite; }
+      .orbit-c { transform-origin: 80px 80px; animation: gl-spin 3.3s linear infinite; }
+      .core { transform-origin: 80px 80px; animation: gl-breathe 1.6s ease-in-out infinite; }
+      .spark { transform-origin: 80px 80px; animation: gl-spark 1.45s ease-in-out infinite; }
+      @keyframes gl-spin { to { transform: rotate(360deg); } }
+      @keyframes gl-spin-reverse { to { transform: rotate(-360deg); } }
+      @keyframes gl-breathe { 0%,100% { transform: scale(.88); opacity:.86; } 50% { transform: scale(1.07); opacity:1; } }
+      @keyframes gl-spark { 0%,100% { opacity:.35; transform: scale(.8); } 50% { opacity:1; transform: scale(1.18); } }
+      @media (prefers-reduced-motion: reduce) {
+        .orbit-a,.orbit-b,.orbit-c,.core,.spark { animation: none; }
+      }
+    </style>
+  </defs>
+
+  <g class="orbit-c" fill="none" stroke-linecap="round">
+    <circle cx="80" cy="80" r="60" stroke="#6D45E9" stroke-opacity=".14" stroke-width="2"/>
+    <path d="M80 20 A60 60 0 0 1 137 61" stroke="url(#gl-gradient)" stroke-width="4"/>
+    <circle cx="80" cy="20" r="3.5" fill="#A78BFA" filter="url(#glow)"/>
+  </g>
+
+  <g class="orbit-b" fill="none" stroke-linecap="round">
+    <circle cx="80" cy="80" r="45" stroke="#6D45E9" stroke-opacity=".12" stroke-width="2"/>
+    <path d="M116 107 A45 45 0 0 1 45 106" stroke="url(#gl-gradient)" stroke-width="5"/>
+    <circle cx="116" cy="107" r="3.4" fill="#FF8A3D" filter="url(#glow)"/>
+  </g>
+
+  <g class="orbit-a" fill="none" stroke-linecap="round">
+    <circle cx="80" cy="80" r="30" stroke="#6D45E9" stroke-opacity=".12" stroke-width="2"/>
+    <path d="M55 63 A30 30 0 0 1 101 57" stroke="url(#gl-gradient)" stroke-width="5"/>
+    <circle cx="55" cy="63" r="3" fill="#8B5CF6" filter="url(#glow)"/>
+  </g>
+
+  <g class="core">
+    <path d="M80 48 L108 80 L80 112 L52 80 Z" fill="url(#gl-core)" opacity=".18"/>
+    <path d="M80 57 L101 80 L80 103 L59 80 Z" fill="url(#gl-core)"/>
+    <path d="M80 65 L93 80 L80 95 L67 80 Z" fill="#FFFFFF" fill-opacity=".94"/>
+    <path d="M80 70 L89 80 L80 90 L71 80 Z" fill="#6D45E9"/>
+  </g>
+  <circle class="spark" cx="80" cy="80" r="5" fill="#FFFFFF" filter="url(#glow)"/>
+</svg>

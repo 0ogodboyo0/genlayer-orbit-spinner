@@ -1,0 +1,21 @@
+:root {
+  --gl-violet: #6d45e9;
+  --gl-violet-light: #a78bfa;
+  --gl-orange: #ff8a3d;
+}
+
+.genlayer-spinner {
+  width: 56px;
+  height: 56px;
+  display: inline-block;
+  color: var(--gl-violet);
+}
+
+.genlayer-spinner--sm { width: 24px; height: 24px; }
+.genlayer-spinner--lg { width: 96px; height: 96px; }
+
+.genlayer-spinner svg { display: block; width: 100%; height: 100%; }
+
+@media (prefers-reduced-motion: reduce) {
+  .genlayer-spinner svg * { animation: none !important; }
+}
