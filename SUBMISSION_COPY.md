@@ -1,29 +1,34 @@
-# Submission Copy — Design the GenLayer Spinner
+# Submission Copy — GenLayer Orbit Spinner
 
 ## Title
 
-```text
-GenLayer Orbit Spinner
-```
+GenLayer Orbit Spinner — Production-Ready Loading System
 
 ## Notes / Description
 
-```text
-GenLayer Orbit Spinner is an original, web-ready animated SVG loading state designed for Portal and dApp interfaces.
+GenLayer Orbit Spinner is a dependency-free, production-ready loading system for GenLayer Portal and dApp interfaces. It includes compact, standard, and full-screen variants, light and dark themes, responsive sizing, accessible status semantics, and reduced-motion support.
 
-The design uses three layered orbital paths with different speeds and phases to create a smooth infinite loop around a compact geometric core. The violet-to-amber motion system gives the asset a clear GenLayer-inspired identity while the transparent background keeps it portable across loading pages, modal states, and compact buttons.
+The animation uses layered orbital paths, phase-shifted motion, and a geometric core to express GenLayer's network and consensus identity while remaining legible from 24px to full-screen states. It runs without JavaScript and can be used as a standalone SVG or CSS-driven UI primitive.
 
-The repository includes the standalone SVG, optional CSS sizing helpers, a responsive demo on light and dark backgrounds, a preview image, accessibility labels, and reduced-motion support. The asset runs without JavaScript and remains legible from 24px to larger display sizes.
-```
+The repository includes an interactive demo, preview assets, installation instructions, HTML/CSS/SVG examples, accessibility guidance, a Copy SVG control, and loading-state examples for buttons, cards, pages, and transaction flows.
 
-## Evidence URL after publishing the repository
+## Evidence URLs
 
-```text
+Repository:
 https://github.com/0ogodboyo0/genlayer-orbit-spinner
-```
+
+Interactive demo:
+https://github.com/0ogodboyo0/genlayer-orbit-spinner/blob/main/demo.html
+
+SVG source:
+https://github.com/0ogodboyo0/genlayer-orbit-spinner/blob/main/genlayer-orbit-spinner.svg
+
+CSS source:
+https://github.com/0ogodboyo0/genlayer-orbit-spinner/blob/main/spinner.css
+
+Preview image:
+https://github.com/0ogodboyo0/genlayer-orbit-spinner/blob/main/preview-light-dark.webp
 
 ## Suggested commit message
 
-```text
-feat: add original GenLayer Orbit Spinner asset
-```
+feat: upgrade GenLayer Orbit Spinner demo and variants

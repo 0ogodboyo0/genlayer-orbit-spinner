@@ -1,41 +1,80 @@
 # GenLayer Orbit Spinner
 
-**GenLayer Orbit Spinner** is an original, lightweight loading-state asset created for the GenLayer Portal. Its layered orbital paths represent independent activity converging around a shared geometric core, while the violet-to-amber gradient echoes the Portal’s expressive product tone.
+GenLayer Orbit Spinner is a dependency-free, production-ready loading system for GenLayer Portal and dApp interfaces. It uses layered orbital paths and a geometric core to express network activity, consensus, and transaction waiting in a compact, reusable visual primitive.
 
-The asset is delivered as a web-ready animated SVG, requires no JavaScript, loops infinitely, and remains legible at compact sizes. The provided demo presents it on both light and dark backgrounds.
+## Why it is useful for GenLayer
 
-![GenLayer Orbit Spinner preview](preview-light-dark.webp)
+GenLayer interfaces frequently need clear loading feedback while a route loads, a wallet action is processed, or a transaction moves toward finality. This spinner provides a consistent GenLayer-inspired identity without requiring a JavaScript framework or a runtime dependency.
 
-## Deliverables
+## Included variants
 
-| File | Purpose |
-|---|---|
-| `genlayer-orbit-spinner.svg` | Standalone animated SVG asset. |
-| `spinner.css` | Optional CSS sizing helpers. |
-| `demo.html` | Responsive light/dark preview page. |
+The demo shows compact, standard, large, and full-screen sizes. The asset works on both light and dark surfaces and includes reduced-motion behavior for users who prefer less animation.
+
+| Variant | Recommended use |
+| --- | --- |
+| Compact | Buttons, cards, inline loading states |
+| Standard | Panels, forms, and transaction status areas |
+| Large | Dialogs and route transitions |
+| Full-screen | Portal loading and long-running transaction states |
+
+## Features
+
+- Standalone animated SVG asset.
+- CSS sizing helpers for compact, standard, large, and full-screen states.
+- Light and dark surface examples.
+- Accessible loading labels in the demo.
+- `prefers-reduced-motion` support and a manual reduced-motion control.
+- Copy SVG control for quick integration.
+- Responsive mobile layout.
+- No JavaScript dependency for the spinner asset itself.
+
+## Demo
+
+Open `demo.html` in a browser. The demo includes size variants, a light surface, a full-screen state, usage code, and interactive controls.
+
+For a local preview, run:
+
+    python -m http.server 8080
+
+Then open:
+
+    http://127.0.0.1:8080/demo.html
 
 ## Usage
 
-Add the SVG directly to a page:
+Use the SVG directly:
 
-```html
-<img class="genlayer-spinner" src="genlayer-orbit-spinner.svg" alt="Loading" />
-```
+    <img class="gl-spinner gl-spinner--md" src="genlayer-orbit-spinner.svg" alt="Loading">
 
-Then optionally include `spinner.css` for consistent sizing:
+Use the CSS helpers:
 
-```html
-<link rel="stylesheet" href="spinner.css" />
-```
+    <link rel="stylesheet" href="spinner.css">
+    <img class="gl-spinner gl-spinner--sm" src="genlayer-orbit-spinner.svg" alt="Loading">
 
-Available sizing classes are `genlayer-spinner--sm` (24px), the default 56px size, and `genlayer-spinner--lg` (96px).
+Available classes are `gl-spinner--sm`, `gl-spinner--md`, `gl-spinner--lg`, and `gl-spinner--xl`.
 
-## Design notes
+## Accessibility and motion
 
-The design uses three independently rotating orbits, each with a distinct phase and speed. Their motion gives a smooth, continuous reading without abrupt resets. A pulsing, layered diamond core offers a compact visual shorthand for the GenLayer identity, while the transparent background makes the asset portable across Portal surfaces.
+Loading images should include a useful `alt` value when they communicate status. The demo also includes visually hidden status text. The CSS honors the user's `prefers-reduced-motion` setting, and the demo provides a manual reduced-motion toggle.
 
-The SVG contains a `prefers-reduced-motion` media query. When a user enables reduced motion, the animation stops while the geometric loading mark remains visible.
+## Repository structure
+
+    genlayer-orbit-spinner.svg   Core animated SVG asset
+    spinner.css                  Sizing and motion helpers
+    demo.html                    Responsive interactive demo
+    preview-light-dark.webp      Preview image on light and dark surfaces
+    SUBMISSION_COPY.md           Resubmission title, description, and evidence
+
+## Evidence
+
+Repository: https://github.com/0ogodboyo0/genlayer-orbit-spinner
+
+SVG source: https://github.com/0ogodboyo0/genlayer-orbit-spinner/blob/main/genlayer-orbit-spinner.svg
+
+Demo source: https://github.com/0ogodboyo0/genlayer-orbit-spinner/blob/main/demo.html
+
+Preview: https://github.com/0ogodboyo0/genlayer-orbit-spinner/blob/main/preview-light-dark.webp
 
 ## License
 
-MIT License. See `LICENSE`.
+See `LICENSE` for the project license.

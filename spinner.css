@@ -1,21 +1,83 @@
 :root {
-  --gl-violet: #6d45e9;
-  --gl-violet-light: #a78bfa;
-  --gl-orange: #ff8a3d;
+  --gl-size: 64px;
+  --gl-motion: 1;
 }
 
-.genlayer-spinner {
-  width: 56px;
-  height: 56px;
-  display: inline-block;
-  color: var(--gl-violet);
+.gl-spinner {
+  --gl-duration: 2.8s;
+  display: block;
+  width: var(--gl-size);
+  height: var(--gl-size);
+  max-width: 100%;
+  object-fit: contain;
+  transform-origin: center;
+  animation: gl-spinner-breathe var(--gl-duration) ease-in-out infinite;
 }
 
-.genlayer-spinner--sm { width: 24px; height: 24px; }
-.genlayer-spinner--lg { width: 96px; height: 96px; }
+.gl-spinner--sm {
+  --gl-size: 32px;
+  --gl-duration: 2.4s;
+}
 
-.genlayer-spinner svg { display: block; width: 100%; height: 100%; }
+.gl-spinner--md {
+  --gl-size: 72px;
+  --gl-duration: 2.8s;
+}
+
+.gl-spinner--lg {
+  --gl-size: 128px;
+  --gl-duration: 3s;
+}
+
+.gl-spinner--xl {
+  --gl-size: 168px;
+  --gl-duration: 3.2s;
+}
+
+@keyframes gl-spinner-breathe {
+  0%, 100% {
+    transform: scale(.94) rotate(0deg);
+    opacity: .82;
+  }
+
+  50% {
+    transform: scale(1) rotate(10deg);
+    opacity: 1;
+  }
+}
 
 @media (prefers-reduced-motion: reduce) {
-  .genlayer-spinner svg * { animation: none !important; }
+  .gl-spinner,
+  .gl-spinner * {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+  }
+}
+
+.force-reduced-motion .gl-spinner,
+.force-reduced-motion .gl-spinner * {
+  animation-duration: .001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: .001ms !important;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: #a99bea;
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .18em;
 }
