@@ -81,3 +81,20 @@
   font-weight: 700;
   letter-spacing: .18em;
 }
+
+/* Hard stop for reduced-motion mode */
+.force-reduced-motion .gl-spinner,
+.force-reduced-motion .gl-spinner * {
+  animation: none !important;
+  animation-play-state: paused !important;
+  transition: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gl-spinner,
+  .gl-spinner * {
+    animation: none !important;
+    animation-play-state: paused !important;
+    transition: none !important;
+  }
+}
