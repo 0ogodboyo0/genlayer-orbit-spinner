@@ -78,7 +78,15 @@
       document.getElementById('copyButton').textContent = 'SVG copied';
       setTimeout(() => document.getElementById('copyButton').textContent = 'Copy SVG', 1600);
     });
-    document.getElementById('motionButton').addEventListener('click', () => document.documentElement.classList.toggle('force-reduced-motion'));
+    const motionButton = document.getElementById('motionButton');
+    const spinnerImages = document.querySelectorAll('img.gl-spinner');
+    motionButton.addEventListener('click', () => {
+      const reduced = document.documentElement.classList.toggle('force-reduced-motion');
+      spinnerImages.forEach((img) => {
+        img.src = reduced ? 'genlayer-orbit-spinner-static.svg' : svgUrl;
+      });
+      motionButton.textContent = reduced ? 'Enable motion' : 'Toggle reduced motion';
+    });
   </script>
 </body>
 </html>
